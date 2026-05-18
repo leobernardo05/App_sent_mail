@@ -1,12 +1,12 @@
 <?php
     require "./bibliotecas/src/Exception.php";
-    require "./bibliotecas/src/OAuth.php";
     require "./bibliotecas/src/PHPMailer.php";
     require "./bibliotecas/src/POP3.php";
     require "./bibliotecas/src/SMTP.php";
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
+    use PHPMailer\PHPMailer\SMTP;
 
     class Mensagem {
         private $para = null;
@@ -51,7 +51,7 @@
         $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
         $mail->Username   = 'lbm3@discente.ifpe.edu.br';                     //SMTP username
-        $mail->Password   = 'SENHA_DE_APP_AQUI';                               //SMTP password
+        $mail->Password   = 'vdnv csqf vbyr fluf';                               //SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
         $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
