@@ -81,8 +81,45 @@
         $mensagem->status['descricao_status'] = 'Email enviado com sucesso';
 
     } catch (Exception $e) {
-        echo "Não foi possível enviar esse e-mail! Tente novamente mais tarde";
-        echo "Detalhes do erro: {$mail->ErrorInfo}";
+
+        $mensagem->status['codigo_status'] = 2;
+        $mensagem->status['descricao_status'] = 'Email não foi enviado com sucesso';
     }
 
 ?>
+<html>
+    <!-- cabeça da pagina -->
+    <head>
+        <meta charset="utf-8" />
+    	<title>App Mail Send</title>
+
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+
+    <!-- corpo da pagina -->
+    <body>
+        <div class="container">
+            <div class="py-3 text-center">
+				<img class="d-block mx-auto mb-2" src="logo.png" alt="" width="72" height="72">
+				<h2>Send Mail</h2>
+				<p class="lead">Seu app de envio de e-mails particular!</p>
+			</div>
+            <div class="row">
+                <div class="col-md-12">
+                    <? if($mensagem->status['codigo_status'] == 1) { ?>
+                            <div class="container">
+                                <h1 class="display-4 text-success">Sucesso</h1>
+                                <p>E-mail enviado com sucesso</p>
+                            </div>
+                     <? } ?> 
+
+                    // email não enviado com sucesso
+                    <? if ($mensagem->status['codigo_status'] == 2) { ?>
+
+                    <?  } ?>
+                     
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
