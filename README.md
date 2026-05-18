@@ -37,15 +37,16 @@ O projeto demonstra na prática como funciona o envio de e-mails via servidor SM
 
 ---
 
-## 🧠 Estrutura do Projeto
+## 🗂️ Organização do Projeto
+
 App_sent_mail/
 │
 ├── bibliotecas/
-│ └── src/
-│ ├── PHPMailer.php
-│ ├── SMTP.php
-│ ├── Exception.php
-│ ├── POP3.php
+│   └── src/
+│       ├── PHPMailer.php
+│       ├── SMTP.php
+│       ├── Exception.php
+│       └── POP3.php
 │
 ├── index.php
 ├── processa_envio.php
