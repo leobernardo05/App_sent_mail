@@ -38,7 +38,7 @@ O projeto demonstra na prática como funciona o envio de e-mails via servidor SM
 ---
 
 ## 🗂️ Organização do Projeto
-
+```
 App_sent_mail/
 │
 ├── bibliotecas/
@@ -52,9 +52,7 @@ App_sent_mail/
 ├── processa_envio.php
 ├── logo.png
 └── README.md
-
----
-
+```
 
 ---
 
