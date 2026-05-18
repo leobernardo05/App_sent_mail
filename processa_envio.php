@@ -12,6 +12,7 @@
         private $para = null;
         private $assunto = null;
         private $mensagem = null;
+        public $status = array ('codigo_status' => null, 'descricao_status' => '');
 
         public function __get($atributo){
             return $this->$atributo;
@@ -39,7 +40,7 @@
         if(!$mensagem->mensagemValida()){
             echo 'Mensagem não é válida';
             die();
-            header('Location: index.php');
+            header('Location: index.php'); //redireciona para o index.php, pois precisa de dados previos para entrar na aba processa_envio.php
         } 
     }
 
@@ -75,7 +76,10 @@
         $mail->AltBody = 'É necessario utilizar o client que suporte o HTML';
 
         $mail->send();
-        echo 'E-mail enviado com sucesso';
+
+        $mensagem->status['codigo_status'] = 1;
+        $mensagem->status['descricao_status'] = 'Email enviado com sucesso';
+
     } catch (Exception $e) {
         echo "Não foi possível enviar esse e-mail! Tente novamente mais tarde";
         echo "Detalhes do erro: {$mail->ErrorInfo}";
